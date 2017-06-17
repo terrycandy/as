@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:background="@drawable/bg_shape">
+
+    <TextView
+        android:id="@+id/list_mark_textview_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="指示物"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:paddingTop="5dp" />
+
+    <View
+        android:background="#27af23"
+        android:layout_height="55dp"
+        android:layout_width="1dp"></View>
+
+    <TextView
+        android:id="@+id/list_point_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="坐标"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:paddingTop="15dp" />
+
+
+</LinearLayout>

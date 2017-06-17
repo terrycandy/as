@@ -1,0 +1,145 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#27af23"
+        android:weightSum="1">
+
+        <ImageView
+            android:src="@drawable/back"
+            android:id="@+id/result_back"
+            android:layout_gravity="left|center"
+            android:layout_weight="0.1"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+
+        <TextView
+            android:id="@+id/title_register_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="考核结果"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_weight="0.80" />
+
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:id="@+id/imageView4"
+            android:layout_gravity="left|center"
+            android:layout_weight="0.02"
+            android:layout_marginLeft="20dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="普九班"
+            android:textSize="24sp"
+            android:id="@+id/result_classname_textview" />
+
+        <TextView
+            android:id="@+id/result_name_textview"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="张三"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/result_mapname_textview"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="青山铺"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/result_teachername_textview"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="老师"
+            android:textSize="24sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/result_costtime_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="总用时：34分钟"
+            android:textSize="24sp" />
+        <TextView
+            android:text="正确点数（4个）"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/result_point_textview"
+            android:textSize="24sp"
+            android:layout_marginLeft="10dp" />
+
+
+
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/result_msg_edittext"
+        android:textSize="24sp"
+        android:layout_marginTop="50dp"
+        android:hint="意见反馈" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
+        <Button
+          android:text="发送"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/result_send_button"
+            android:background="#27af23"
+            android:textSize="24sp" />
+
+        <Button
+            android:text="结束"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/result_over_button"
+            android:background="#27af23"
+            android:layout_marginLeft="10dp"
+            android:textSize="24sp" />
+    </LinearLayout>
+</LinearLayout>

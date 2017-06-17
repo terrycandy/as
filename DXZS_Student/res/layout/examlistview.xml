@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_shape">
+
+    <TextView
+        android:id="@+id/exma_list_mark_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="指示物"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:textSize="24sp" />
+
+    <View
+        android:background="#27af23"
+        android:layout_height="55dp"
+        android:layout_width="1dp"></View>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_shape"
+        android:layout_weight="0.6"
+        android:id="@+id/exam_list_point_textview">
+        <TextView
+            android:id="@+id/exam_coordinate_X_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="坐标X"
+            android:textSize="24sp"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/exam_coordinate_Y_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="坐标Y"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+    <View
+        android:background="#27af23"
+        android:layout_height="55dp"
+        android:layout_width="1dp"></View>
+    <EditText
+        android:id="@+id/exma_list_answer_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="答案"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_weight="0.2" />
+    <View
+        android:background="#27af23"
+        android:layout_height="55dp"
+        android:layout_width="1dp"></View>
+    <Button
+        android:id="@+id/exma_list_report_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/submit" />
+
+
+</LinearLayout>

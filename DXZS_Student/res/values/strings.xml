@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">星通</string>
+    <string name="action_settings">Settings</string>
+    <string name="login_tip">欢迎使用定向助手\n请登录……</string>
+    <string name="username_txt">请填写用户名</string>
+    <string name="passwd_txt">请填写密码</string>
+    <string name="save_btn">保存</string>
+    <string name="login_btn">登录</string>
+    <string name="regis_btn">注册</string>
+    <string name="start_btn">开考</string>
+    <string name="get_btn">准备</string>
+    <string name="exit_btn">退出</string>
+    <string name="return_btn">返回</string>
+    <string name="title_activity_login">学员登录</string>
+    <string name="title_activity_config">星通学员端</string>
+    <string name="title_activity_register">用户注册</string>
+    <string name="title_activity_prepare">准备考核</string>
+    <string name="title_activity_examination">野外考核</string>
+    <string name="title_activity_result">考核结果</string>
+    <string name="spinner_prompt">请选择一项</string>
+    <string name="ip_info">IP地址</string>
+    <string name="port_info">端口号</string>
+    <string name="ip">192.168.43.108</string>
+    <string name="port">8521</string>
+
+    <string name="user_name">name</string>
+    <string name="user_class">class</string>
+    <string name="user_map">map</string>
+    <string name="user_end">endPoint</string>
+    <string name="user_teacher">teacher</string>
+    <string name="config_server">server</string>
+    <string name="config_server_ip">ip</string>
+    <string name="config_server_port">port</string>
+    <string name="config_save_success">保存成功</string>
+    <string name="config_write_server_ip_or_port">请填写服务器IP or 服务器Port</string>
+
+    <string name="login_fail">登陆失败</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_input_username">请输入账号</string>
+    <string name="login_input_password">请输入密码</string>
+    <string name="save_userName">userName</string>
+
+    <string name="log">gin-</string>
+    <string name="inf">inf-</string>
+    <string name="pre">pre-</string>
+    <string name="f">;</string>
+    <string name="reg">reg-</string>
+    <string name="role_S">student</string>
+    <string name="role_T">teacher</string>
+    <string name="register_success">注册成功</string>
+    <string name="register_fail">注册失败</string>
+    <string name="register_username_cannot_null">用户名不能为空</string>
+    <string name="register_check_password_fail">两次密码不一致</string>
+    <string name="register_name_cannot_null">姓名不能为空</string>
+    <string name="register_user_id_wrong">学号格式不正确</string>
+    <string name="register_class_cannot_null">班级不能为空</string>
+    <string name="register_phone_wrong">电话号码格式不正确</string>
+    <string name="register_year_cannot_null">年级不能为空</string>
+    <string name="register_college_cannot_null">学院不能为空</string>
+
+    <string-array name="map_name">
+        <item>青山铺</item>
+        <item>长沙市</item>
+        <item>长沙县</item>
+    </string-array>
+    <string-array name="region_name">
+        <item>圣毅园</item>
+        <item>吴家老屋</item>
+        <item>安沙镇</item>
+        <item>四步坑水库</item>
+    </string-array>
+    <string-array name="teacher_name">
+        <item>程果</item>
+        <item>刘晓才</item>
+        <item>易文安</item>
+        <item>邢启明</item>
+        <item>刘鹤松</item>
+        <item>黄昉</item>
+        <item>张铁良</item>
+        <item>谢扬斌</item>
+        <item>王奇胜</item>
+    </string-array>
+
+</resources>

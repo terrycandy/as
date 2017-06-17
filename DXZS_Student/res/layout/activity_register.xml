@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#27af23"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/back"
+            android:id="@+id/register_return_button"
+            android:layout_gravity="left|center"
+            android:layout_weight="0.1"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+
+        <TextView
+            android:id="@+id/title_register_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/title_activity_register"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_weight="0.80" />
+
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:id="@+id/imageView4"
+            android:layout_gravity="left|center"
+            android:layout_weight="0.02"
+            android:layout_marginLeft="20dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp">
+
+        <EditText
+            android:id="@+id/register_userid_edittext"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bg_border"
+            android:drawableLeft="@drawable/register1"
+            android:gravity="center"
+            android:hint="用户名-cheng"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/register_password_edittext"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_border"
+            android:drawableLeft="@drawable/register1"
+            android:gravity="center"
+            android:hint="密码-****"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/register_password2_edittext"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_border"
+            android:drawableLeft="@drawable/register1"
+            android:gravity="center"
+            android:hint="再次输入密码"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/register_name_edittext"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_border"
+            android:drawableLeft="@drawable/register1"
+            android:gravity="center"
+            android:hint="姓名-张三"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/register_classname_edittext"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bg_border"
+            android:drawableLeft="@drawable/register1"
+            android:gravity="center"
+            android:hint="班次-合训普九"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/register_phonenumber_edittext"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_border"
+            android:drawableLeft="@drawable/register1"
+            android:gravity="center"
+            android:hint="手机-13876"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+
+        <Button
+            style="@style/AppBaseTheme"
+            android:gravity="center"
+            android:text="@string/regis_btn"
+            android:textSize="24sp"
+            android:background="#27af23"
+            android:layout_weight="3.20"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:id="@+id/register_register_button">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

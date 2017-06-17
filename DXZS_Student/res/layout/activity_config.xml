@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:background="#27af23"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/config_back"
+            android:src="@drawable/back"
+            android:layout_weight="0.1"
+            android:layout_gravity="center"
+            android:layout_height="60dp"
+            android:layout_width="60dp" />
+
+        <TextView
+            android:text="@string/title_activity_login"
+            android:id="@+id/textView2"
+            android:textSize="24sp"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.6"
+            android:gravity="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="80dp">
+
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageView"
+            android:layout_marginBottom="?android:attr/expandableListPreferredItemPaddingLeft"
+            android:layout_marginLeft="@android:dimen/notification_large_icon_width"
+            android:layout_marginTop="0dp" />
+
+        <ImageView
+            android:src="@drawable/xingtong"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ip_info"
+            android:textSize="24sp"
+            android:background="#27af23"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+        </TextView>
+
+        <EditText
+            android:id="@+id/config_ip_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ip"
+            android:textSize="24sp"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/port_info"
+            android:textSize="24sp"
+            android:background="#27af23"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+        </TextView>
+
+        <EditText
+            android:id="@+id/config_port_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/port"
+            android:textSize="24sp"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/config_save_button"
+            style="@style/AppBaseTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#27af23"
+            android:gravity="center"
+            android:text="@string/save_btn"
+            android:textSize="24sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
