@@ -1,5 +1,10 @@
 package com.candystudio.android.dxzs.student.activity;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.xbill.DNS.tests.primary;
 
 import com.candystudio.android.dxzs.student.app.R;
@@ -43,7 +48,7 @@ public class ExaminationActivity extends Activity implements OnClickListener {
         @Override
         public int getCount() {
             Log.d("Debug-Exam","开始获取数据大小："+String.valueOf(0));
-            return 0;//getData(exam.getPoints()).size();
+            return list.size();
         }
 
         @Override
@@ -75,14 +80,14 @@ public class ExaminationActivity extends Activity implements OnClickListener {
                 Log.d("Debug-Exam","项目已经存在");
                 holder = (ViewHolderE)convertView.getTag();
             }
-            //holder.markTextView.setText((String)getData(exam.getPoints()).get(position).get("Mark"));
-            //String poi = (String)getData(exam.getPoints()).get(position).get("Point");
-//            String[] tmp = poi.split(":");
-//            holder.pointXTextView.setText(tmp[0]);
-//            holder.pointYTextView.setText(tmp[1]);
-//			holder.reportButton.setText((String)getData(exam.getPoints()).get(position).get("Button"));
-//			holder.answerEditText.setText("");
-//            pointId.add((String)getData(exam.getPoints()).get(position).get("PointId"));
+            holder.markTextView.setText((String)list.get(position).get("Mark"));
+            String poi = (String)list.get(position).get("Point");
+            String[] tmp = poi.split(":");
+            holder.pointXTextView.setText(tmp[0]);
+            holder.pointYTextView.setText(tmp[1]);
+			holder.reportButton.setText((String)list.get(position).get("Button"));
+			holder.answerEditText.setText("");
+            pointId.add((String)list.get(position).get("PointId"));
 
 			holder.reportButton.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -93,7 +98,7 @@ public class ExaminationActivity extends Activity implements OnClickListener {
                     String mes = et.getText().toString();
 //                    Toast.makeText(ExaminationActivity.this,"the input information : " + pointId.get(position) + " : "+mes,Toast.LENGTH_SHORT).show();
 //                    sendAnswer(mes, pointId.get(position));
-                    report("", userId, String.valueOf(position+1), mes);
+                    report("", userId,  pointId.get(position), mes);
 				}
 			});
             return convertView;
@@ -118,6 +123,9 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 
 	private Location curLocation;
 
+	List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+	public ArrayList<String> pointId = new ArrayList<String>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -131,6 +139,14 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 		return true;
 	}
 
+	private void initData(){
+        Map<String, Object> map ;
+        map = new HashMap<String, Object>();
+        map.put("PointId","1");
+        map.put("Mark", "ABC");
+        map.put("Point","1234" + ":" + "4321");
+        list.add(map);
+	}
 	private void initLayoutMember() {
 
 //		reportButton = (Button) findViewById(R.id.exam_report_button);
