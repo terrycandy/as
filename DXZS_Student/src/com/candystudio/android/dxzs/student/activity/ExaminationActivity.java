@@ -37,99 +37,115 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class ExaminationActivity extends Activity implements OnClickListener {
-	//列表视图适配器
+	// 列表视图适配器
 	public class MyAdapter extends BaseAdapter {
-        private LayoutInflater mInflater;
+		private LayoutInflater mInflater;
 
-        public MyAdapter(Context context){
-            Log.d("Debug-Exam","开始实例化适配器");
-            this.mInflater = LayoutInflater.from(context);
-        }
-        @Override
-        public int getCount() {
-            Log.d("Debug-Exam","开始获取数据大小："+String.valueOf(0));
-            return list.size();
-        }
+		public MyAdapter(Context context) {
+			Log.d("Debug-Exam", "开始实例化适配器");
+			this.mInflater = LayoutInflater.from(context);
+		}
 
-        @Override
-        public Object getItem(int arg0) {
-            return null;
-        }
+		@Override
+		public int getCount() {
+			Log.d("Debug-Exam", "开始获取数据大小：" + String.valueOf(0));
+			return list.size();
+		}
 
-        @Override
-        public long getItemId(int arg0) {
-            return 0;
-        }
+		@Override
+		public Object getItem(int arg0) {
+			return null;
+		}
 
-        @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            Log.d("Debug-Exam","开始准备构建每一个项目");
-            ViewHolderE holder = null;
-            if (convertView == null) {
-                Log.d("Debug-Exam","开始构建每一个子项目");
-                holder= new ViewHolderE();
-                convertView = mInflater.inflate(R.layout.examlistview, null);
-                holder.markTextView = (TextView) convertView.findViewById(R.id.exma_list_mark_textview);
-                holder.pointXTextView = (TextView)convertView.findViewById(R.id.exam_coordinate_X_textview);
-                holder.pointYTextView = (TextView)convertView.findViewById(R.id.exam_coordinate_Y_textview);
-				holder.answerEditText = (EditText)convertView.findViewById(R.id.exma_list_answer_edittext);
-				holder.reportButton = (Button)convertView.findViewById(R.id.exma_list_report_button);
-                holder.reportButton.setTag(position);
-                convertView.setTag(holder);
-            }else {
-                Log.d("Debug-Exam","项目已经存在");
-                holder = (ViewHolderE)convertView.getTag();
-            }
-            holder.markTextView.setText((String)list.get(position).get("Mark"));
-            String poi = (String)list.get(position).get("Point");
-            String[] tmp = poi.split(":");
-            holder.pointXTextView.setText(tmp[0]);
-            holder.pointYTextView.setText(tmp[1]);
-			holder.reportButton.setText((String)list.get(position).get("Button"));
+		@Override
+		public long getItemId(int arg0) {
+			return 0;
+		}
+
+		@Override
+		public View getView(final int position, View convertView,
+				ViewGroup parent) {
+			Log.d("Debug-Exam", "开始准备构建每一个项目");
+			ViewHolderE holder = null;
+			if (convertView == null) {
+				Log.d("Debug-Exam", "开始构建每一个子项目");
+				holder = new ViewHolderE();
+				convertView = mInflater.inflate(R.layout.examlistview, null);
+				holder.markTextView = (TextView) convertView
+						.findViewById(R.id.exma_list_mark_textview);
+				holder.pointXTextView = (TextView) convertView
+						.findViewById(R.id.exam_coordinate_X_textview);
+				holder.pointYTextView = (TextView) convertView
+						.findViewById(R.id.exam_coordinate_Y_textview);
+				holder.answerEditText = (EditText) convertView
+						.findViewById(R.id.exma_list_answer_edittext);
+				holder.reportButton = (Button) convertView
+						.findViewById(R.id.exma_list_report_button);
+				holder.reportButton.setTag(position);
+				convertView.setTag(holder);
+			} else {
+				Log.d("Debug-Exam", "项目已经存在");
+				holder = (ViewHolderE) convertView.getTag();
+			}
+			holder.markTextView
+					.setText((String) list.get(position).get("Mark"));
+			String poi = (String) list.get(position).get("Point");
+			String[] tmp = poi.split(":");
+			holder.pointXTextView.setText(tmp[0]);
+			holder.pointYTextView.setText(tmp[1]);
+			holder.reportButton.setText((String) list.get(position).get(
+					"Button"));
 			holder.answerEditText.setText("");
-            pointId.add((String)list.get(position).get("PointId"));
+			pointId.add((String) list.get(position).get("PointId"));
 
 			holder.reportButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-                    ListView list = (ListView)findViewById(R.id.exam_point_listview);
-                    LinearLayout layout = (LinearLayout)list.getChildAt(position);
-                    EditText et = (EditText) layout.findViewById(R.id.exma_list_answer_edittext);
-                    String mes = et.getText().toString();
-//                    Toast.makeText(ExaminationActivity.this,"the input information : " + pointId.get(position) + " : "+mes,Toast.LENGTH_SHORT).show();
-//                    sendAnswer(mes, pointId.get(position));
-                    report("", userId,  pointId.get(position), mes);
+					ListView list = (ListView) findViewById(R.id.exam_point_listview);
+					LinearLayout layout = (LinearLayout) list
+							.getChildAt(position);
+					EditText et = (EditText) layout
+							.findViewById(R.id.exma_list_answer_edittext);
+
+					String mes = et.getText().toString();
+					// Toast.makeText(ExaminationActivity.this,"the input information : "
+					// + pointId.get(position) +
+					// " : "+mes,Toast.LENGTH_SHORT).show();
+					// sendAnswer(mes, pointId.get(position));
+					String teacherID = "081539";
+					report(teacherID, userId, pointId.get(position), mes);
 				}
 			});
-            return convertView;
-        }
-    }
-	
-	//private Button reportButton;
+			return convertView;
+		}
+	}
+
+	// private Button reportButton;
 	private Button startButton;
-    private ImageView exitButton;
-    private Button callHelpButton;
-	
+	private ImageView exitButton;
+	private Button callHelpButton;
+
 	private TextView classTextView;
-    private TextView nameTextView;
-    private TextView mapNameTextView;
-    private TextView teacherNameTextView;
-    
-    private ListView listView;
-    
-    private String userId;
-    
+	private TextView nameTextView;
+	private TextView mapNameTextView;
+	private TextView teacherNameTextView;
+
+	private ListView listView;
+
+	private String userId;
+
 	private LocationManager locationManager;
 
 	private Location curLocation;
 
 	List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 	public ArrayList<String> pointId = new ArrayList<String>();
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_examination);
+		initData();
 		initLayoutMember();
 		initLBS();
 	}
@@ -139,37 +155,53 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 		return true;
 	}
 
-	private void initData(){
-        Map<String, Object> map ;
-        map = new HashMap<String, Object>();
-        map.put("PointId","1");
-        map.put("Mark", "ABC");
-        map.put("Point","1234" + ":" + "4321");
-        list.add(map);
+	private void initData() {
+		Map<String, Object> map;
+		map = new HashMap<String, Object>();
+		map.put("PointId", "1");
+		map.put("Mark", "ABC");
+		map.put("Point", "1234" + ":" + "4321");
+		list.add(map);
+		map = new HashMap<String, Object>();
+		map.put("PointId", "2");
+		map.put("Mark", "ASX");
+		map.put("Point", "5436" + ":" + "1256");
+		list.add(map);
+		map = new HashMap<String, Object>();
+		map.put("PointId", "3");
+		map.put("Mark", "ZXC");
+		map.put("Point", "3467" + ":" + "9876");
+		list.add(map);
+		map = new HashMap<String, Object>();
+		map.put("PointId", "4");
+		map.put("Mark", "CBV");
+		map.put("Point", "3241" + ":" + "6578");
+		list.add(map);
 	}
+
 	private void initLayoutMember() {
 
-//		reportButton = (Button) findViewById(R.id.exam_report_button);
-//		reportButton.setOnClickListener(this);
-		classTextView = (TextView)findViewById(R.id.exam_classname_textview);
-        //classTextView.setText(student.getUnit());
-        nameTextView = (TextView)findViewById(R.id.exam_name_textview);
-       // nameTextView.setText(student.getUserName());
-        mapNameTextView = (TextView)findViewById(R.id.exam_mapname_textview);
-       // mapNameTextView.setText(exam.getMap());
-        teacherNameTextView = (TextView)findViewById(R.id.exam_teachername_textview);
-        //teacherNameTextView.setText(exam.getTeacher());
-        
-        listView = (ListView)findViewById(R.id.exam_point_listview);
-        MyAdapter myAdapter = new MyAdapter(this);
-        listView.setAdapter(myAdapter);
-        startButton = (Button)findViewById(R.id.exam_return_button);
-        exitButton = (ImageView) findViewById(R.id.exam_back);
-        callHelpButton = (Button)findViewById(R.id.exam_call_help_button);
-        startButton.setOnClickListener(this);
-        exitButton.setOnClickListener(this);
-        callHelpButton.setOnClickListener(this);
-        SharedPreferences sp = getSharedPreferences("currentUser", MODE_PRIVATE);
+		// reportButton = (Button) findViewById(R.id.exam_report_button);
+		// reportButton.setOnClickListener(this);
+		classTextView = (TextView) findViewById(R.id.exam_classname_textview);
+		// classTextView.setText(student.getUnit());
+		nameTextView = (TextView) findViewById(R.id.exam_name_textview);
+		// nameTextView.setText(student.getUserName());
+		mapNameTextView = (TextView) findViewById(R.id.exam_mapname_textview);
+		// mapNameTextView.setText(exam.getMap());
+		teacherNameTextView = (TextView) findViewById(R.id.exam_teachername_textview);
+		// teacherNameTextView.setText(exam.getTeacher());
+
+		listView = (ListView) findViewById(R.id.exam_point_listview);
+		MyAdapter myAdapter = new MyAdapter(this);
+		listView.setAdapter(myAdapter);
+		startButton = (Button) findViewById(R.id.exam_return_button);
+		exitButton = (ImageView) findViewById(R.id.exam_back);
+		callHelpButton = (Button) findViewById(R.id.exam_call_help_button);
+		startButton.setOnClickListener(this);
+		exitButton.setOnClickListener(this);
+		callHelpButton.setOnClickListener(this);
+		SharedPreferences sp = getSharedPreferences("currentUser", MODE_PRIVATE);
 		userId = sp.getString("username", null);
 
 	}
@@ -209,7 +241,8 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 				1000, 1, locationListenner);
 	}
 
-	private boolean report(String teacherId, String userID, String pointId, String ansower) {
+	private boolean report(String teacherId, String userID, String pointId,
+			String answer) {
 		SendStrGetIntThread commthread = null;
 
 		if (curLocation == null) {
@@ -230,7 +263,7 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 			reportString += ";";
 			reportString += curLocation.getLatitude();
 			reportString += ";";
-			reportString += ansower;
+			reportString += answer;
 
 			try {
 				commthread = new SendStrGetIntThread(reportString);
@@ -261,7 +294,7 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	protected void callHelp(String userId){
+	protected void callHelp(String userId) {
 		SendStrGetIntThread commthread = null;
 
 		if (curLocation == null) {
@@ -296,12 +329,13 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 				Toast.makeText(this, "Unknown host!", Toast.LENGTH_LONG).show();
 			} else if (commthread.result == 4) {
 				Toast.makeText(this, "IO problem!", Toast.LENGTH_LONG).show();
-			} 
+			}
 
 		}
-    }
-    protected void finishExam(){
-    	SendStrGetIntThread commthread = null;
+	}
+
+	protected void finishExam() {
+		SendStrGetIntThread commthread = null;
 		if (curLocation == null) {
 			Toast.makeText(this, "Location is null!", Toast.LENGTH_LONG).show();
 		} else {
@@ -310,7 +344,7 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 			// rpt-081539;201409060391;1;112.991938;28.23844;KDDXABC
 			String finString = "fin-";
 			finString += userId;
-	
+
 			try {
 				commthread = new SendStrGetIntThread(finString);
 				commthread.start();
@@ -334,26 +368,26 @@ public class ExaminationActivity extends Activity implements OnClickListener {
 				Toast.makeText(this, "Unknown host!", Toast.LENGTH_LONG).show();
 			} else if (commthread.result == 4) {
 				Toast.makeText(this, "IO problem!", Toast.LENGTH_LONG).show();
-			} 
+			}
 
 		}
-    }
-    
+	}
+
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-	        case R.id.exam_return_button:
-	            finishExam();
-	            break;
-	        case R.id.exam_call_help_button:
-	            callHelp(userId);
-	            break;
-	        case R.id.exam_back:
-	            finish();
-	            break;
-	        default:
-	            break;
+		case R.id.exam_return_button:
+			finishExam();
+			break;
+		case R.id.exam_call_help_button:
+			callHelp(userId);
+			break;
+		case R.id.exam_back:
+			finish();
+			break;
+		default:
+			break;
 		}
 	}
 

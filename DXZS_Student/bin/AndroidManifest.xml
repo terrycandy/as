@@ -34,10 +34,10 @@
         <activity
             android:name="com.candystudio.android.dxzs.student.activity.ConfigActivity"
             android:label="@string/title_activity_config" >
-            <!--  <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name="com.candystudio.android.dxzs.student.activity.LoginActivity"
@@ -50,10 +50,10 @@
         <activity
             android:name="com.candystudio.android.dxzs.student.activity.PrepareActivity"
             android:label="@string/title_activity_prepare" >
-            <intent-filter>
+            <!--  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name="com.candystudio.android.dxzs.student.activity.ExaminationActivity"
